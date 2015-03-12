@@ -1,0 +1,49 @@
+.img-container{
+      background-color:rgba(0,0,0,0.6);
+      width:100%;
+      padding:5%;
+       min-height: none;
+  max-height: none;
+  height:100%;
+      z-index:99999;
+      position:fixed;
+      display:none;
+    }
+   
+    .cropper-bg {
+  background-image:none;
+}
+.docs-preview {
+ margin-right: 0px;}
+.save_img{
+
+  bottom:1%;
+  border-radius:10px;
+padding:1% 2%;
+background:#fff;
+border:1px solid #fff;
+
+}
+.cancel_img{
+
+  bottom:1%;
+  border-radius:10px;
+padding:1% 2%;
+background:#fff;
+border:1px solid #fff;
+
+}
+.img-preview{
+ 
+border-radius: 100px;
+width: 150px !important;
+height: 150px !important;
+border:1px solid;
+}
+.img-preview > img {
+  height:110% !important;
+
+
+    max-width: 0;
+}
+.change_img{display:none !important;} 

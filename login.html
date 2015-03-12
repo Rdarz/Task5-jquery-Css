@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script>
+	$(document).ready(function(){
+		
+		$("#login").click(function(){
+				var email=$("#email").val();
+				var pswd=$("#password").val();
+				
+				
+				if(email=="abc@gmail.com" && pswd=="pass"){
+				alert(email);	
+					window.location="index.html";
+
+				}else{
+					alert("wrong");
+					$(".error").css("display","block");
+
+				}
+				return false;
+				});
+		});
+	</script>
+</head>
+<body>
+	<div class="login">
+	<div class="logo">
+		<h1><span class="color_sky">P</span>ROFILE<br> MANI<span class="color_sky">A</span></h1>
+		<img src="images/profile/profile.png" >
+		</div>
+		<form>
+	<input type="email" name="" id="email" value="" placeholder="Email" required/>
+	<input type="password" name="" id="password" value="" placeholder="Password" required/>
+	<button value="" id="login">Log In</button>
+	</form>
+<div class="error">Please Try Again</div>
+	<hr>
+</div>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Profile Mania</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/profile.css">
+		<!-- profile pic -->
+		<link href="css/cropper.css" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
+		<link href="css/profile_pic.css" rel="stylesheet">
+		<!-- /profile pic -->
+		<link href="Circular-Progress-Bar/css/progress.css" rel="stylesheet">
+		
+		
+		<!-- map -->
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		<script type="text/javascript" src="js/CustomGoogleMapMarker.js"></script>
+		<script type="text/javascript">
+		function initialize() {
+			var myLatlng = new google.maps.LatLng(19.474313, 72.829931);
+			var mapOptions = {
+				zoom: 14,
+				center: myLatlng,
+				disableDefaultUI: true
+			}
+			
+			var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+			
+			/*
+			// Example standard marker
+			var marker = new google.maps.Marker({
+				position: myLatlng,
+				map: map,
+				title: 'Hello World!'
+			});
+			*/
+			
+			overlay = new CustomMarker(
+				myLatlng,
+				map,
+				{
+					marker_id: '123'
+				}
+			);
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+		
+	</head>
+	<body>
+		<!-- profile pic modal -->
+		<div class="img-container ">
+			<img src="images/blank.png" alt="Picture">
+			<button class="save_img">Save</button>
+			<button class="cancel_img">Cancel</button>
+		</div>
+		<!-- profile pic modal end-->
+		<header class="header">
+			<div class="logo">
+				<h1><span class="color_black">P</span>ROFILE<span class="break">&nbsp;&nbsp;MANI<span class="color_black">A</span></span></h1>
+			</div>
+			<div class="menu">
+				<ul>
+					<li><img src="images/profile/post.png" alt="" /><a href="index.html" >Posts</a></li>
+					<li><img src="images/profile/search.png" alt=""/><a href="view.html" >View</a></li>
+					<li><img src="images/profile/profile.png" alt=""/><a href="profile.html" >Profile</a></li>
+					<li><img src="images/profile/feedback.png" alt=""/><a href="feedback.html" >Feedback</a></li>
+					<li><img src="images/profile/profile_pic.png" alt=""/><a href="login.html" class="color_white">Sign Out</a></li>
+				</ul>
+			</div>
+			</header><!-- /header -->
+			<div class="container">
+			<div class="profile_container">
+				
+				<div class="cover_page">
+					<div class="upload">
+						<div class="image-editor">
+							<input type="file" class="cropit-image-input"  >
+							<button class="image_upload">Change</button>
+							<input type="range" class="cropit-image-zoom-input">
+							<button class="export">Save</button>
+							<div class="cropit-image-preview-container">
+								<div class="cropit-image-preview"></div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+				<!-- cover page end -->
+				
+				<div class="profile_pic">
+					<input type="file" class="change_img">
+					<!-- <button class="trigger">Change</button> -->
+					<div class="docs-preview clearfix">
+						<div class="img-preview preview-lg trigger">
+							
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div id="tabs">
+					<div class="row">Settings</div>
+					<ul>
+						<li>
+							<a href="#a">Map</a>
+						</li>
+						<li>
+							<a href="#b">Toggle</a>
+						</li>
+						<li>
+							<a href="#c">Combobox</a>
+						</li>
+						<li>
+							<a href="#d">Date</a>
+						</li>
+						<div class="pie_progress" role="progressbar" data-goal="100" aria-valuemin="0" aria-valuemax="100">
+							<span class="pie_progress__number" style="color:white">0% </span>
+						</div>
+						
+						
+					</ul>
+					<div id="a">
+						<!-- <div id="map-canvas">
+						</div> -->
+						<script type="text/javascript" src="http://www.webestools.com/google_map_gen.js?lati=19.474313&amp;long=72.829931&amp;zoom=13&amp;width=1072&amp;height=420&amp;mapType=normal&amp;map_btn_normal=yes&amp;map_btn_satelite=yes&amp;map_btn_mixte=yes&amp;map_small=yes&amp;marqueur=yes&amp;info_bulle="></script>
+					</div>
+					<div id="b">
+						<div class="switch switch-blue">
+							<input type="radio" class="switch-input" name="view2" value="week2" id="week2" checked>
+							<label for="week2" class="switch-label switch-label-off">Week</label>
+							<input type="radio" class="switch-input" name="view2" value="month2" id="month2">
+							<label for="month2" class="switch-label switch-label-on">Month</label>
+							<span class="switch-selection"></span>
+						</div>
+					</div>
+					<div id="c">
+						<datalist id="languages">
+						<option value="HTML">HTML</option>
+						<option value="C++">C++</option>
+						<option value="COBOL">COBOL</option>
+						<option value="JAVA">JAVA</option>
+						</datalist>
+						<form method="post">
+							<input type="text" list="languages">
+						</form>
+					</div>
+					<div id="d">
+						<p>Date: <input type="text" id="datepicker"></p>
+						
+					</div>
+				</div>
+			</div>
+			</div>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+			<script src="js/jquery.cropit.js"></script>
+			<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+			<!-- profile pic -->
+			<script src="js/profile_pic.js"></script>
+			
+			
+			<script src="js/cropper.js"></script>
+			<script src="js/main.js"></script>
+			<script src="Circular-Progress-Bar/js/jquery.diagram.js"></script>
+			
+			<script type="text/javascript" src="Circular-Progress-Bar/demo/js/rainbow.min.js"></script>
+			<script type="text/javascript" src="Circular-Progress-Bar/src/jquery-asPieProgress.js"></script>
+			<script type="text/javascript">
+			jQuery(document).ready(function($){
+			$('.pie_progress').asPieProgress({
+			'namespace': 'pie_progress'
+			});
+			
+			
+			
+			});
+			</script>
+			<!-- /profile pic -->
+			<script>
+				
+			$(document).ready(function($) {
+				var progress_val=0;
+				var count_prof_pic=0;
+				var count_cover_pic=0;
+				$("#datepicker").datepicker();
+
+				$(".cover_page").hover(function() {
+					/* Stuff to do when the mouse enters the element */
+					$(".image_upload").css("display","block");
+				}, function() {
+					$(".image_upload").css("display","none");
+					/* Stuff to do when the mouse leaves the element */
+				});
+				
+				$('.upload').on('change',function (){
+			var filePath = $(this).val();
+			console.log(filePath);
+			$('.cover_page img').attr('src', filePath);
+			});
+				$('#tabs').tabs().addClass('ui-tabs-vertical ui-helper-clearfix');
+				
+			$('.change_img').on('change',function(event) {
+			/* Act on the event */
+			var filePath = URL.createObjectURL(event.target.files[0]);
+			
+			var temp1= $('.cropper-container img').attr('src');
+			var temp2=$('.img-preview img').attr('src');
+			$('.cancel_img').click(function(event) {
+			/* Act on the event */
+			$('.cropper-container img').attr('src',temp1);
+			$('.img-preview img').attr('src',temp2);
+			});
+			if(filePath!=null){
+			$('.cropper-container img').attr('src',filePath);
+			$('.img-preview img').attr('src',filePath);
+			}
+			
+			$('.img-container').css('display', 'block');
+			
+			});
+			$('.save_img').click(function(event) {
+			/* Act on the event */
+			count_cover_pic++;
+			$('.img-container').css('display', 'none');
+			if(count_cover_pic==1){
+			progress_val+=50;
+			$('.pie_progress').asPieProgress('go',progress_val);
+			}
+			
+			});
+			$(".trigger").click(function () {
+			$(".change_img").trigger('click');
+			});
+			$('.image-editor').cropit({
+			exportZoom: 1.25,
+			imageBackground: true,
+			imageBackgroundBorderWidth: 20,
+			
+			});
+			$('.cropit-image-input').click(function(event) {
+			/* Act on the event */
+			
+			$(".cropit-image-preview").show();
+			$('.export').css('display','block');
+			$('.cropit-image-zoom-input').css('display','block');
+			});
+			$(".image_upload").click(function () {
+			$(".cropit-image-input").trigger('click');
+			});
+			$('.export').click(function() {
+			// var imageData = $('.image-editor').cropit('export');
+			// $(".cover_page img").attr('src', imageData);
+			count_prof_pic++;
+			$(".cropit-image-preview").hide();
+			$('.export').css('display','none');
+			$('.cropit-image-zoom-input').css('display','none');
+			if(count_prof_pic==1){
+			progress_val+=50;
+			$('.pie_progress').asPieProgress('go',progress_val);
+			}
+			// window.open(imageData);
+			});
+			});
+			
+			callback();
+			</script>
+			
+		</body>
+	</html>

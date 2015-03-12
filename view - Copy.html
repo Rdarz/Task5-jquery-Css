@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Profile Mania</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/view.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		
+		<!-- DATETIME PICKER -->
+		<!-- Mobiscroll JS and CSS Includes -->
+		
+		<script src="mobiscroll-master/js/mobiscroll.core.js"></script>
+		<script src="mobiscroll-master/js/mobiscroll.frame.js"></script>
+		<script src="mobiscroll-master/js/mobiscroll.scroller.js"></script>
+		<script src="mobiscroll-master/js/mobiscroll.util.datetime.js"></script>
+		<script src="mobiscroll-master/js/mobiscroll.datetimebase.js"></script>
+		<script src="mobiscroll-master/js/mobiscroll.datetime.js"></script>
+		
+		
+		
+		<!-- search autocomplete -->
+		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js" ></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+		<!-- /search autocomplete -->
+		
+		
+		<link href="mobiscroll-master/css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+		
+		<link href="mobiscroll-master/css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+		<link href="mobiscroll-master/css/mobiscroll.scroller.android.css" rel="stylesheet" type="text/css" />
+		
+		
+		
+		<script>
+		$(function () {
+		function init() {
+		
+		$('#demo_datetime').mobiscroll().datetime({
+		theme: "android",     // Specify theme like: theme: 'ios' or omit setting to use default
+		mode:"scroller",       // Specify scroller mode like: mode: 'mixed' or omit setting to use default
+		display:"inline",
+		minDate: new Date(),  // More info about minDate: http://docs.mobiscroll.com/2-14-0/datetime#!opt-minDate
+		maxDate: new Date(2050,7,30,15,44),   // More info about maxDate: http://docs.mobiscroll.com/2-14-0/datetime#!opt-maxDate
+		stepMinute: 1  // More info about stepMinute: http://docs.mobiscroll.com/2-14-0/datetime#!opt-stepMinute
+		});
+		
+		// Time demo initialization
+		
+		}
+		var demo, theme, mode,display;
+		
+		
+		
+		
+		
+		
+		
+		init();
+		var availableTags = [
+		"Haskell",
+		"ActionScript",
+		"AppleScript",
+		"Asp",
+		"BASIC",
+		"C",
+		"C++",
+		"Clojure",
+		"COBOL",
+		"ColdFusion",
+		"Erlang",
+		"Fortran",
+		"Groovy",
+		"Java",
+		"JavaScript",
+		"Lisp",
+		"Perl",
+		"PHP",
+		"Python",
+		"Ruby",
+		"Scala",
+		"Scheme"
+		];
+		availableTags.sort();
+		$( "#tags" ).autocomplete({
+		source: availableTags
+		});
+		
+		
+		$(document).ready(function($) {
+			var answers=["1","2","3"];
+			var count=0;
+		$(".add").click(function(event) {
+			/* Act on the event */
+		$(".add_question").css("display","block");
+		});
+		$(".done").click(function(event) {
+			/* Act on the event */
+			var quest=$('.input_qs').val();
+			var ans1=$('.input_ans1').val();
+			var ans2=$('.input_ans2').val();
+			var ans3=$('.input_ans3').val();
+			var ans4=$('.input_ans4').val();
+			var right_answr=$(".right_ans").val();
+			if(ans1== right_answr || ans2== right_answr || ans3== right_answr || ans4 == right_answr){
+				
+				if(quest && ans1 && ans2 && ans3 && ans4 && right_answr!=""){
+				
+			answers.push(right_answr);
+			console.log(answers);
+			$(".add_question").css("display","none");
+				$(".qa_container").append('<div class="qa"><label class="qstn" >'+quest+'</label><div class="quiz"><form><div><input type="radio"  name="value" class="radio" value="'+ans1+'">'+ans1+'</div><div><input type="radio" name="value" class="radio" value="'+ans2+'">'+ans2+'	</div><div><input type="radio" name="value" class="radio" value="'+ans3+'">'+ans3+'</div><div><input type="radio" name="value" class="radio" value="'+ans4+'">'+ans4+'</div></form></div></div>');
+		$('#progressbar').attr("max",$('.qa_container').children().length );
+			}else{
+				alert("Please fill all the field");
+			}
+			}else{
+			// alert(right_answr);
+			alert(right_answr);
+				alert("enter valid answer");
+			}
+		});
+		$(".submit_answr").click(function(event) {
+			/* Act on the event */
+			alert($('.qa_container').children().length);
+			// 	for(var i=0;i<$('.qa_container').children().length;i++){
+			// 	console.log("I value="+i);
+			// 	var av=$('.qa_container').children(2).find("input[type=radio]:checked").val();
+			// 	// console.log(i);
+			// 	alert(av);
+			// 	console.log(av);
+		// }
+		var i=0;
+		$("div.qa input[type=radio]:checked").each( function() {
+		// if(this.value==)
+		if(this.value==answers[i]){
+			count++;
+			i++;
+			console.log("value of i="+i);
+			console.log("count="+count);
+		}else{
+			i++;
+			console.log("value of i="+i);
+			console.log("count="+count);
+			}
+		});
+			$('.score').click();
+		$('.reset').click();
+		});
+		$(".score").click(function(event) {
+			/* Act on the event */
+		alert("Your Score="+count);
+		});
+		$(".reset").click(function(event) {
+			/* Act on the event */
+			$("input:radio").removeAttr('checked');
+		});
+			var selectedTags=[];
+		var flag=0;
+		var index=0;
+		$('.tags_selected').on('click', '.cancel', function(event) {
+			console.log("asf");
+			availableTags.push($(this).parent().attr('class'));
+			$(this).parent().remove('span');
+			availableTags.sort();
+			/* Act on the event */
+		});
+		$("body").on('click', '.ui-menu-item', function(event) {
+			flag=0;
+				var ans=$(this).html();
+				for(var i=0;i<availableTags.length;i++){
+						if(ans==availableTags[i]){
+							flag=1;
+							index=i;
+						}
+					}
+					if(flag==1){
+						availableTags[index]="";
+						selectedTags[index]=ans;
+						$(".tags_selected").append('<span style="background-color:#33ADFF;padding:1%;margin:1%;border-radius:10%;" class="left '+ans+'">'+ ans+'&nbsp;<img src="images/cancel.png" width="12" class="cancel" style="vertical-align:top;padding:3% 0;"></span>');
+						$(this).html("");
+					}
+					
+				
+				
+			});
+			$("#tags").on('keydown', function(e) {
+			if($(this).val()!=""){
+				if(e.keyCode==13){
+					flag=0;
+					var ans=$(this).val();
+					for(var i=0;i<availableTags.length;i++){
+							if(ans==availableTags[i]){
+								flag=1;
+								index=i;
+							}
+						}
+						if(flag==1){
+							availableTags[index]="";
+							selectedTags[index]=ans;
+							$(".tags_selected").append('<span style="background-color:#33ADFF;padding:1%;margin:1%;border-radius:10%;" class="left '+ans+'">'+ ans+'&nbsp;<img src="images/cancel.png" width="12" class="cancel" style="vertical-align:top;padding:3% 0;"></span>');
+							$(this).val("");
+						}
+						
+					}
+				}
+					/* Act on the event */
+				});
+				// var max=$('#progressbar').attr("max");
+				// var value=$('.qa_container').children().length/max;
+				// $('#progressbar').attr("value",value);
+				
+				
+				
+				
+				
+				$('.qa_container').on('click', 'input[type=radio]', function(event) {
+					
+					var va=$('input[type=radio]:checked').length;
+					alert(va);
+					$('#progressbar').attr('value', va);
+				});
+				
+				// var animate = setInterval(function() {
+				//     loading();
+				// }, time);
+				});//document.ready close
+				});
+				</script>
+				
+				<!-- /DATETIME PICKER -->
+				
+			</head>
+			<body>
+				<header class="header">
+					<div class="logo">
+						<h1><span class="color_black">P</span>ROFILE<span class="break">&nbsp;&nbsp;MANI<span class="color_black">A</span></span></h1>
+					</div>
+					<div class="menu">
+						<ul>
+							<li><img src="images/profile/post.png" alt=""/><a href="index.html" >Posts</a></li>
+							<li><img src="images/profile/search.png" alt=""/><a href="view.html" >View</a></li>
+							<li><img src="images/profile/profile.png" alt=""/><a href="profile.html" >Profile</a></li>
+							<li><img src="images/profile/feedback.png" alt=""/><a href="feedback.html" >Feedback</a></li>
+							<li><img src="images/profile/profile_pic.png" alt=""/><a href="login.html" class="color_white">Sign Out</a></li>
+						</ul>
+					</div>
+					
+					
+					
+					</header><!-- /header -->
+					<div class="container">
+						<div class="box">
+							<div class="searchbox">
+								<input id="tags" type="text" name="" value="" placeholder="Search...">
+								<div class="tags_selected"></div>
+							</div>
+							<div class="datepicker">
+								<input type="text" name="" value="" placeholder="Date & Time" id="demo_datetime">
+								
+							</div>
+						</div>
+					<progress id="progressbar" value="0" max="3"></progress>
+					<div class="qa_container">
+						
+						
+						<div class="qa">
+							
+							<label class="qstn" >What is 1............ ? </label>
+							<div class="quiz">
+								<form>
+									<div><input type="radio"  name="value" class="radio" value="1">1</div>
+									<div><input type="radio" name="value" class="radio" value="2">2	</div>
+									<div><input type="radio" name="value" class="radio" value="3">3	</div>
+									<div><input type="radio" name="value" class="radio" value="4">4	</div>
+								</form>
+							</div>
+						</div>
+						<div class="qa">
+							
+							<label class="qstn" >What is 2............ ? </label>
+							<div class="quiz">
+								<form>
+									<div><input type="radio"  name="value" class="radio" value="1">1</div>
+									<div><input type="radio" name="value" class="radio" value="2">2	</div>
+									<div><input type="radio" name="value" class="radio" value="3">3	</div>
+									<div><input type="radio" name="value" class="radio" value="4">4	</div>
+								</form>
+							</div>
+						</div>
+						<div class="qa">
+							
+							<label class="qstn" >What is 3............ ? </label>
+							<div class="quiz">
+								<form>
+									<div><input type="radio"  name="value" class="radio" value="1">1</div>
+									<div><input type="radio" name="value" class="radio" value="2">2	</div>
+									<div><input type="radio" name="value" class="radio" value="3">3	</div>
+									<div><input type="radio" name="value" class="radio" value="4">4	</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<button class="submit_answr">Submit</button><button class="add">Add Question</button><button class="score">Result</button><button class="reset">Reset</button>
+					
+					<div class="add_question">
+						
+						<input type="text" class="input_qs" name="" value="" placeholder="Your Question?" >
+						<div >
+							<input style="width:47.5%" class="left input_ans1" type="text" name="" value="" placeholder="Answer1" >
+							<input style="width:47.5%" class="left input_ans2" type="text" name="" value="" placeholder="Answer2" >
+						</div>
+						<div >
+							<input style="width:47.5%" class="left input_ans3" type="text" name="" value="" placeholder="Answer3" >
+							<input style="width:47.5%" class="left input_ans4" type="text" name="" value="" placeholder="Answer4" >
+						</div>
+						<div class="right_answr">
+							<input type="text" class="right_ans" name="" value="" placeholder="Right Answer?" >
+						</div>
+						<div >
+							<button class="done">Done</button>
+						</div>
+					</div>
+					
+				</div>
+				
+			</body>
+		</html>

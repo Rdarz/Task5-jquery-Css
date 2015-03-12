@@ -1,0 +1,133 @@
+
+.container{
+
+	overflow: hidden;
+	width:80%;
+	margin: 1% auto;
+
+}
+
+
+body{
+
+	font-family: georgia;
+	font-size: 14px;
+	padding:0;
+	width:100%;
+	margin: 0;
+}
+.add_post{cursor:pointer;position: fixed;right:0;padding:1%;background-color: #000;color:#f4f4f4;top:50%;}
+.new_post{cursor:pointer;position: fixed;padding:1% 5%;background-color: #000;color:#f4f4f4;left:45%;display:none;}
+.login{height:100%;width:60%;background:rgba(255,255,255,0.5);border: 2px dotted #c4c4c4;margin: auto; }
+.login input{border:1px solid #c2c2c2;border-radius: 5% ;display: block;margin:2% auto;padding:1.5% 15%;box-shadow: 1px 1px 4px 1px #3399FF ;text-align: center;color:#4c4c4c;font-size: 1.3em;}
+.login .logo h1{font-size: 3em;padding:5%;text-align: center;margin: auto}
+.login .logo img{max-width:100%;}
+.login button{cursor:pointer;background-color:#3399FF;border:1px solid #c2c2c2;
+	border-radius: 5% ;
+	display: block;
+	margin:2%  auto;
+	padding:1.50% 25%;
+	box-shadow: 1px 1px 4px 1px #4c4c4c ;
+	text-align: center;
+	color:#4c4c4c;font-size: 1.3em;
+}
+.login .logo {text-align: center;border-bottom: 1em  #7c7c7c;}
+.login hr{border:1px solid;width:60%;box-shadow: 1px 1px 4px 1px;margin: 5em auto; }
+.error{text-align:center;display:none;font-size:2em;}
+
+.header{padding:0 2% 0.5% 0;background-color: #3399FF;color:white;overflow: hidden;border-bottom:5px solid #e5e5e5;}
+.header .logo h1{font-size: 2em;float:left;text-align: center;padding:1% 0 0 6%}
+.header .menu{font-size: 1.2em;float: right;width:70%;text-align: right;float:right;}
+.header .menu ul{padding: 0.5%;}
+.header .menu li a{text-decoration:none;color:#2c2c2c;}
+.header .menu li img{width:1.8em;display: block;margin:5% auto}
+
+.header .menu li{list-style-type: none;padding:0 2%;display:inline-block;}
+.footer{text-align:center;padding:2%;background-color: #171B1F;color:white;overflow: hidden;border-top:5px solid #e5e5e5;}
+
+
+.bold{font-weight: bold;}
+.break{width:100%;display:block;}
+.left{float:left;}
+.right{float:right;}
+.color_white{color:#fff}
+.color_sky{color:#3399FF;}
+.color_black{color:#303030;}
+.fsize_1.5{font-size: 1.5em}
+.fsize_2{font-size: 2em}
+.fsize_3{font-size: 3em}
+.fsize_4{font-size: 4em}
+.fsize_5{font-size: 5em}
+
+
+
+@media screen and (min-width: 480px)  and (max-width : 768px)  {
+
+
+	body{background-color: rgba(255,255,255,0.5);}
+	.login{width:100%;background:none;border: none;  }
+	.login input{border:1px solid #c2c2c2;border-radius: 5% ;display: block;margin:2% auto;padding:1.5% 15%;box-shadow: 1px 1px 4px 1px #3399FF ;text-align: center;color:#4c4c4c;font-size: 1.3em;}
+	.login .logo h1{font-size: 3em;padding:5%;text-align: center;margin: auto}
+	.login .logo img{width:50%;}
+	.login button{cursor:pointer;background-color:#3399FF;border:1px solid #c2c2c2;border-radius: 5% ;margin:6%  auto;padding:2% 38%;box-shadow: 1px 1px 4px 1px #4c4c4c ;text-align: center;color:#4c4c4c;font-size: 1.3em;}
+	.login .logo {text-align: center;border-bottom: 1em  #7c7c7c;}
+	.login hr{display:none; }
+
+	/* Styles */
+	.break{display:block;}
+	.header{background-color: #3399FF;color:white;overflow: hidden;padding:0;}
+	.header .logo h1{font-size: 1.1em;padding: 2% 2%;margin:0;float:left;}	
+	.header .menu{font-size: 1em;width:79%;text-align: right;float: right}
+	.header .menu ul{padding:0;}
+	.header .menu li a{text-decoration:none;color:#fff;}
+	.header .menu li img{width:2em;margin: auto;padding-top:8%; }
+	.header .menu li{list-style-type: none;display:inline-block;padding:0 3%;}
+}
+
+@media only screen and (max-width : 480px){
+
+	.break{display:block;}
+	.header{background-color: #3399FF;color:white;overflow: hidden;padding:0;}
+	.header .logo h1{font-size: 1.5em;width:100%;border-bottom:0.5px solid #000;padding: 1% 0;margin:0 0 1% 0;}	
+	.header .menu{font-size: 0.8em;width:100%;text-align: center;padding: 1%}
+	.header .menu ul{padding:0;}
+	.header .menu li a{text-decoration:none;color:#fff;}
+	.header .menu li img{width:3em;margin: auto}
+	.header .menu li{list-style-type: none;display:inline-block;padding:0 3%;}
+	.break{width:10%;display:inline-block;}
+	/* Styles */
+
+	body{background-color: rgba(255,255,255,0.5);}
+	.login{width:100%;background:none;border: none;  }
+	.login input{border:1px solid #c2c2c2;border-radius: 5% ;display: block;margin:2% auto;padding:1.5% 15%;box-shadow: 1px 1px 4px 1px #3399FF ;text-align: center;color:#4c4c4c;font-size: 1.3em;}
+	.login .logo h1{font-size: 3em;padding:5%;text-align: center;margin: auto}
+	.login .logo img{width:50%;}
+	.login button{cursor:pointer;background-color:#3399FF;border:1px solid #c2c2c2;border-radius: 5% ;margin:6%  auto;padding:2% 38%;box-shadow: 1px 1px 4px 1px #4c4c4c ;text-align: center;color:#4c4c4c;font-size: 1.3em;}
+	.login .logo {text-align: center;border-bottom: 1em  #7c7c7c;}
+	.login hr{display:none; }
+}
+
+
+@media only screen and (max-width : 320px){
+	.break{width:10%;display:inline-block;}
+	.header{background-color: #3399FF;color:white;overflow: hidden;padding:0;}
+	.header .logo h1{font-size: 1em;width:99%;border:1px solid;padding: 1px 0;margin:0;}
+
+
+	.header .menu{font-size: 0.8em;width:100%;text-align: center;}
+	.header .menu ul{padding:0;}
+	.header .menu li a{text-decoration:none;color:#fff;}
+	.header .menu li img{max-width:2em;margin: auto}
+	.header .menu li{list-style-type: none;display:inline-block;padding:0 2%;}
+
+
+	.login{width:100%;background:rgba(255,255,255,0.5);border: 2px dotted #c4c4c4;margin: auto;padding-bottom:9%;  }
+	.login input{border:1px solid #c2c2c2;border-radius: 5% ;display: block;margin:2% auto;padding:1.5% 15%;box-shadow: 1px 1px 4px 1px #3399FF ;text-align: center;color:#4c4c4c;font-size: 1.3em;}
+	.login .logo h1{font-size: 3em;padding:5%;text-align: center;margin: auto}
+	.login .logo img{width:50%;}
+	.login button{cursor:pointer;background-color:#3399FF;border:1px solid #c2c2c2;border-radius: 10% ;margin:6%  auto;padding:2% 38%;box-shadow: 1px 1px 4px 1px #4c4c4c ;text-align: center;color:#4c4c4c;font-size: 1.3em;}
+	.login .logo {text-align: center;border-bottom: 1em  #7c7c7c;}
+	.login hr{display:none; }
+}
+
+

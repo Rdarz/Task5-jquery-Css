@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Profile Mania</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/post.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script>
+				$(document).ready(function(){
+					$('.star').click(function(event) {
+					$(this).toggleClass('yellow_star');
+					});
+				
+					
+						$('.comment_submit').click(function(event) {
+								var $cmtbx=$(this).parent().parent().find('.comment_input').val();
+						
+									if($cmtbx==""){
+									
+								}else{
+										$(this).parent().parent().append('<div><p name="" class="posted_content"><img src="images/profile/profile.png" width="40" /><span class="posted_comment">'+$cmtbx+'</span></p></div>');
+										$('.commentbox').hide();
+									}
+								$(this).parent().parent().parent().find('.comment_input').val("");
+											
+																		});
+						$(".like").toggle(function(event) {
+						$(this).text('Dislike');
+		$(this).css("background-color","#39f");
+		},function(){
+							$(this).text('Like');
+		$(this).css("background-color","transparent");
+										});
+						$(".cancel_comment").click(function(event) {
+							/* Act on the event */
+							$(this).parent().parent().parent().find('.commentbox').hide();
+						});
+					
+					$(".reply").click(function(event) {
+						/* Act on the event */
+					
+							$(this).parent().parent().parent().parent().find('.commentbox').css("display","block");
+							
+					// comment_submit();
+												});
+					$(".add_post").click(function () {
+						$('#post_body').clone().insertBefore('#post_body');
+						$('.new_post').css("display","block");
+						$('.new_post').fadeOut(5000);
+													});
+					$(".new_post").click(function(event) {
+						/* Act on the event */
+						$("html, body").animate({ scrollTop: 0 }, "slow");
+						return false;
+														});
+				});
+		</script>
+	</head>
+	<body>
+		<button class="add_post">Add post</button>
+		<span class="new_post">New post Added</span>
+		<header class="header">
+			<div class="logo">
+				<h1><span class="color_black">P</span>ROFILE<span class="break">&nbsp;&nbsp;MANI<span class="color_black">A</span></span></h1>
+			</div>
+			<div class="menu">
+				<ul>
+					<li><img src="images/profile/post.png" /><a href="index.html" >Posts</a></li>
+					<li><img src="images/profile/search.png" /><a href="view.html" >View</a></li>
+					<li><img src="images/profile/profile.png" /><a href="profile.html" >Profile</a></li>
+					<li><img src="images/profile/feedback.png" /><a href="feedback.html" >Feedback</a></li>
+					<li><img src="images/profile/profile_pic.png" /><a href="login.html" class="color_white">Sign Out</a></li>
+				</ul>
+			</div>
+			
+			
+			
+			</header><!-- /header -->
+			<div class="container">
+				
+				
+				<div class="post_body" id="post_body">
+						<span class="star"></span>
+						<img src="images/profile/profile_pic.png" />
+				<div class="left post_container">
+					<div class="post_info">
+						
+						<div class="name">
+
+							<div><h1 class="bold">Lorem Ipsum is simply dummy text</h1>
+							<span class="bold">By</span> Mr.Abc	</div>
+						
+						
+						</div>
+						<div class="post_details">
+							<div><span>March 3, 2013 at </span><span>  2.48 PM</span> </div>
+							
+						</div>
+
+					</div>
+					<div class="post_content">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+					
+					<div class="post_buttons">
+						<div class="left">
+							<button type="" value="share" class="reply">Reply</button>
+							<button type="" value="share" class="like">Like</button>
+							
+							<button type="" value="share" class="readmore">Read More..</button>
+							
+							
+						</div>
+						<div class="right">
+							<div  class="share">
+								<img src="images/fb.png" alt="">
+								<img src="images/twitter.png" alt="">
+							</div>
+						</div>
+					</div>
+					</div>
+
+
+					<div class="commentbox">
+						<img src="images/profile/profile.png" /><textarea class="comment_input" name="" style="" ></textarea><button style="float:right;" class="comment_submit">Submit</button><button style="float:right;" class="cancel_comment">Cancel</button>
+					</div>
+					
+				</div>
+
+
+
+				<div class="post_body" >
+						<span class="star"></span>
+						<img src="images/profile/profile_pic.png" />
+				<div class="left post_container">
+					<div class="post_info">
+						
+						<div class="name">
+
+							<div><h1 class="bold">Lorem Ipsum is simply dummy text</h1>
+							<span class="bold">By</span> Mr.Abc	</div>
+						
+						
+						</div>
+						<div class="post_details">
+							<div><span>March 3, 2013 at </span><span>  2.48 PM</span> </div>
+							
+						</div>
+
+					</div>
+					<div class="post_content">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+					
+					<div class="post_buttons">
+						<div class="left">
+							<button type="" value="share" class="reply">Reply</button>
+							<button type="" value="share" class="like">Like</button>
+							
+							<button type="" value="share" class="readmore">Read More..</button>
+							
+							
+						</div>
+						<div class="right">
+							<div  class="share">
+								<img src="images/fb.png" alt="">
+								<img src="images/twitter.png" alt="">
+							</div>
+						</div>
+					</div>
+					</div>
+
+
+					<div class="commentbox">
+						<img src="images/profile/profile.png" /><textarea class="comment_input" name="" style="" ></textarea><button style="float:right;" class="comment_submit">Submit</button><button style="float:right;" class="cancel_comment">Cancel</button>
+					</div>
+					
+				</div>
+
+
+				<div class="post_body" >
+						<span class="star"></span>
+						<img src="images/profile/profile_pic.png" />
+				<div class="left post_container">
+					<div class="post_info">
+						
+						<div class="name">
+
+							<div><h1 class="bold">Lorem Ipsum is simply dummy text</h1>
+							<span class="bold">By</span> Mr.Abc	</div>
+						
+						
+						</div>
+						<div class="post_details">
+							<div><span>March 3, 2013 at </span><span>  2.48 PM</span> </div>
+							
+						</div>
+
+					</div>
+					<div class="post_content">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+					
+					<div class="post_buttons">
+						<div class="left">
+							<button type="" value="share" class="reply">Reply</button>
+							<button type="" value="share" class="like">Like</button>
+							
+							<button type="" value="share" class="readmore">Read More..</button>
+							
+							
+						</div>
+						<div class="right">
+							<div  class="share">
+								<img src="images/fb.png" alt="">
+								<img src="images/twitter.png" alt="">
+							</div>
+						</div>
+					</div>
+					</div>
+
+
+					<div class="commentbox">
+						<img src="images/profile/profile.png" /><textarea class="comment_input" name="" style="" ></textarea><button style="float:right;" class="comment_submit">Submit</button><button style="float:right;" class="cancel_comment">Cancel</button>
+					</div>
+					
+				</div>
+
+
+
+
+
+
+			</div>
+			<footer class="footer">
+			All Rights Reserved By RD.
+				
+			</footer>
+			
+		</body>
+	</html>

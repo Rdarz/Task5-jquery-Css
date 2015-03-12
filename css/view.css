@@ -1,0 +1,48 @@
+
+.container  input{border:1px solid #c2c2c2;border-radius: 5% ;display: block;margin: auto;width:95%;padding:1%;box-shadow: 0.5px 0.5px 2px 0.5px #3399FF ;color:#4c4c4c;font-size: 1.3em;}
+.box{overflow: hidden;margin:1% auto;}
+.searchbox{float:left;width:48%;overflow: hidden; }
+.datepicker{float:left;width:48%;overflow: hidden;text-align:center;}
+.qa{	padding:1%;	margin:1%;	overflow: hidden;border:1px solid #2c2c2c;}
+.qa_container{	padding:1%;	margin:1%;border:1px solid #2c2c2c;overflow: scroll;height:500px;}
+.qstn{font-size:1.5em;padding: 1% 0 0 1%}
+.quiz{font-size: 1.5em;padding:1%;}
+/*.quiz label {  clear:none; display:block; padding: 0 0 0 3em;margin-top:-0.2em ; }*/
+
+.quiz input[type=radio], input.radio { float:left; width:10px; margin: initial;margin:3px 10px 0 10px;font-size:1em; }
+.radio{font-size:1em;}
+.dw-inline .dw { margin:4% ;}
+.container  input .counties{width:100%;}
+button{
+    margin: 0.5em;	
+    font-size: 1.5em
+}
+progress {  
+    background-color: #f3f3f3;  
+    border: 0;
+
+    width:99.5%;
+    height: 20px;  
+    border-radius: 10px;
+    overflow: hidden;
+    border:1px solid;  
+} 
+.add_question{margin:0 auto;overflow: hidden;display:none;}
+.right_answr{margin-top: 10%}
+.done{margin:1% 47% }
+
+
+@media only screen and (max-width : 320px){
+    .searchbox{float:left;width:100%;overflow: hidden;padding:1%; }
+    .datepicker{float:left;width:100%;overflow: hidden;padding:1%;}
+    .dw-inline .dw {margin: 0}
+}
+@media only screen and (max-width : 480px){
+    .searchbox{float:left;width:100%;overflow: hidden;padding:1%; }
+    .datepicker{float:left;width:100%;overflow: hidden;padding:1%;}
+}
+@media screen and (min-width: 480px)  and (max-width : 768px)  {
+	.searchbox{float:left;width:100%;overflow: hidden;padding:1%; }
+    .datepicker{float:left;width:100%;overflow: hidden;padding:1%;}
+    .dw-inline .dw {margin: 0}
+}

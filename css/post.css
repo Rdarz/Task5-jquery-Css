@@ -1,0 +1,79 @@
+.post_body{
+	
+	
+	padding:2%;
+	margin: 2% 8% auto;
+	border-bottom:.1em solid #e5e5e5;
+	border-top:.1em solid #e5e5e5;
+	overflow: hidden;
+}
+.post_container{overflow: hidden;width:80%;}
+.post_body .post_info{overflow: hidden;color:#5c5c5c;}
+.post_body  img{float:left;width:15%;border:2px solid #e5e5e5 ;margin-right:2%;border-radius:5% ;overflow: hidden;}
+.post_body .post_info .star{background:url('../images/uncheked_star.png') no-repeat ;background-size:100% 100%;display:block;cursor:pointer;position:absolute;z-index:100;margin:-0.8%; width:2%;height:4%;}
+.post_body .post_info .yellow_star{background:url('../images/cheked_star.png')no-repeat ;background-size:100% 100%;display:block;cursor:pointer;position:absolute;z-index:100;margin:-0.8%;  }
+.post_body .post_info .name{display:block;padding:0.5% ;float: left;padding:1.5% 0 0 0 ;width:70%;}
+.post_body .post_info .name h1{font-size:2em;font-family:sans-serif;}
+.post_body .post_info .post_details{display:block;float: right;padding:1.5% 0 0 0 ;font-size:1em;margin-top:1.8em; }
+.post_body .post_content{margin:2% 0;color:#7c7c7c; border:.1em solid #e5e5e5;padding:1%;}
+.post_body .post_buttons{overflow: hidden;padding: 0.5% 0;}
+.commentbox{margin:2%;display:none;display: none}
+.commentbox input{border: 1px solid #5c5c5c;
+	background-color: transparent;
+	border-radius: 1%;
+	padding:0.5%;
+	margin: 0.5%;
+	cursor: pointer;}
+	.input_text{overflow: hidden;}
+	.commentbox img{width:6%;border:1px dotted #5c5c5c;}
+	.comment_input{width:90%;font-size:1.2em;}
+	.post_body .post_buttons .left{width:80%;text-align: left}
+	.post_body .post_buttons .right{width:20%;text-align: right}
+	.share,.reply,.readmore,.like,.cancel_comment,.comment_submit {
+		border: 1px solid #5c5c5c;
+		background-color: transparent;
+		border-radius: 10%;
+		padding:1%;
+		cursor: pointer;
+		overflow: hidden;
+		margin: 0.2%;
+	}
+	.cancel_comment,.comment_submit {margin: 0.5% 1.2% .5% 0%;padding:0.5%;}
+
+	.post_body .post_buttons .right .share img{width:2em;float:right; border:none;  }
+	.post_body .post_buttons .right .share{border:none;}
+
+	.posted_comment{width:90%;float:right;padding:0.5% 0.5%;vertical-align:top;word-wrap: break-word;}
+	.posted_content{width:100%;font-size:1.2em;border:1px solid #9c9c9c;font-size:1em;float:left}
+	.posted_content img{width:6%;}
+
+
+
+
+	@media screen and (min-width: 480px)  and (max-width : 768px)  {
+		.post_body{	width:80%;}
+
+
+	}
+	@media only screen and (max-width : 480px){
+		.post_body{	width:95%;}
+		.post_body .post_info .name{font-size:0.8em;}
+		.post_body .post_info .post_details{font-size:0.8em;}
+		.post_body .post_info img{width:2em;}
+		.post_body .post_info .star{background:url('../images/uncheked_star.png') no-repeat ;background-size:100% 100%;display:block;cursor:pointer;position:absolute;z-index:100;margin:-0.8%; width:5%;height:3%;}
+		.post_body .post_info .yellow_star{background:url('../images/cheked_star.png')no-repeat ;background-size:100% 100%;display:block;cursor:pointer;position:absolute;z-index:100;margin:-0.8%;  }
+		.add_post{display:none;}
+
+	}
+	@media only screen and (max-width : 320px){
+		.post_body{	width:95%;}
+		.post_body .post_info .name{font-size:0.8em;}
+		.post_body .post_info .post_details{font-size:0.8em;}
+		.post_body .post_info img{width:2em;}
+		.post_body .post_info .star{background:url('../images/uncheked_star.png') no-repeat ;background-size:100% 100%;display:block;cursor:pointer;position:absolute;z-index:100;margin:-0.8%; width:5%;height:3%;}
+		.post_body .post_info .yellow_star{background:url('../images/cheked_star.png')no-repeat ;background-size:100% 100%;display:block;cursor:pointer;position:absolute;z-index:100;margin:-0.8%;  }
+		.add_post{display:none;}
+		.post_body .post_buttons .right{display:none;}
+		.post_body .post_buttons .left{width:100%;}
+
+	}

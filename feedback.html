@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile Mania</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/feedback.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	   <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	 
+
+<!-- DATETIME PICKER -->
+ <style>
+  #sortable1, #sortable2 {
+  	background:#fff;
+    border: 1px solid #eee;
+    width: 40%;
+    margin:2% 4%;
+    min-height: 20px;
+    list-style-type: none;
+    float:left;
+
+    padding: 5px 0 0 0;
+    
+      }
+  #sortable1 li, #sortable2 li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 120px;
+  }
+  </style>
+  <script>
+  $(function() {
+    $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+
+    $(".confirm").blur(function(event) {
+var pass=$(".password").val();
+  var confirm=$(".confirm").val();
+ 
+if(pass!=confirm){
+alert("password not matched");}
+    });
+  });
+
+  
+  
+
+  </script>
+</head>
+<body>
+
+	<header class="header">
+		<div class="logo">
+		<h1><span class="color_black">P</span>ROFILE<span class="break">&nbsp;&nbsp;MANI<span class="color_black">A</span></span></h1>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><img src="images/profile/post.png" alt=""/><a href="index.html" >Posts</a></li>
+				<li><img src="images/profile/search.png" alt=""/><a href="view.html" >View</a></li>
+				<li><img src="images/profile/profile.png" alt=""/><a href="profile.html" >Profile</a></li>
+				<li><img src="images/profile/feedback.png" alt=""/><a href="feedback.html" >Feedback</a></li>
+				<li><img src="images/profile/profile_pic.png" alt=""/><a href="login.html" class="color_white">Sign Out</a></li>
+			</ul>
+		</div>
+		
+		
+		
+	</header><!-- /header -->
+	<div class="container">
+		<div class="form">
+
+			<form>
+			<h1 class="center">Form</h1>
+			<input type="text" name="username" value="" placeholder="Username" required>
+			<input type="password" name="password" value="" placeholder="Password" class="password" required>
+			<input type="password" name="confirm" value="" placeholder="Confirm Password" class="confirm" required>
+			<input type="email" name="email" value="" placeholder="Email" required>
+			<input type="radio" name="gender" value="Male">Male
+			<input type="radio" name="gender" value="Female" >Female
+			<br>
+			<ul id="sortable1" class="connectedSortable">
+  <li class="ui-state-default">Item 1</li>
+  <li class="ui-state-default">Item 2</li>
+  <li class="ui-state-default">Item 3</li>
+  <li class="ui-state-default">Item 4</li>
+  <li class="ui-state-default">Item 5</li>
+</ul>
+ 
+<ul id="sortable2" class="connectedSortable">
+  <li class="ui-state-highlight">Item 1</li>
+  <li class="ui-state-highlight">Item 2</li>
+  <li class="ui-state-highlight">Item 3</li>
+  <li class="ui-state-highlight">Item 4</li>
+  <li class="ui-state-highlight">Item 5</li>
+</ul>
+			<input type="submit" name="submit" value="Submit" class="submit">
+			</form>
+		</div>
+	</div>
+
+	
+
+</body>
+</html>
